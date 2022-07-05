@@ -1,0 +1,134 @@
+.col-lg-2{
+  flex: 0 0 10% !important;
+  max-width: 20%;
+}
+
+.Main-Bar {
+  content: " ";
+  position: relative;
+  margin-top: 0%;
+  width: 100%;
+  overflow: no-display;
+  padding-right: 10px;
+  margin-left: 0%;
+  margin-right: 1%;
+  background-position: top;
+  margin-bottom: 0px;
+  padding-left: 5px;
+  background-color: ghostwhite;
+}
+.card {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  
+}
+
+
+.col-lg-2 {
+  flex: 0 0 10% !important;
+  max-width: 20%;
+}
+
+.carousel.fade {
+  opacity: 1;
+}
+
+
+  .carousel.fade .item {
+       transition: opacity ease-out 1.5s; /* can remove to stop 1st slide rapid changing */
+      left: 0;
+      top: 0;
+      position: absolute;
+      width: 100%;
+      display: block;
+  }
+
+      .carousel.fade .item:first-child {
+          top: auto;
+          opacity: 1; /* show first slide */
+          position: relative;
+      }
+
+      .carousel.fade .item:nth-child {
+        top: auto;
+        opacity: 1; /* show first slide */
+        position: relative;
+    }
+
+
+
+      .carousel.fade .item.active {
+          opacity: 1;
+      }
+
+
+
+
+
+
+
+.carousel,
+.carousel-inner,
+.carousel-inner .item {
+  height: 100%;
+}
+
+.item:nth-child(3) {
+  background: #ffffff;
+}
+
+
+
+
+.carousel-fade   .carousel-inner  .item{
+
+      transition-property: opacity;
+  }
+
+.item,
+.active.left,
+.active.right {
+  opacity: 0;
+}
+
+.active,
+.next.left,
+.prev.right {
+  opacity: 1;
+}
+
+  .next,
+  .prev,
+  .active.left,
+  .active.right {
+      left: 0;
+      transform: translate3d(0, 0, 0);
+  }
+
+
+.carousel-control {
+  z-index: 2;
+}
+
+.n1 {
+  background-color: ghostwhite; margin-right:0px; padding-right:0px; text-align:center;
+}
+
+.n3 {
+  width:100%; height:65%; border-radius: none;
+}
+
+.n4 {
+  width:100%; height:65%;
+}
+
+.Main-Bar {
+  width:100%; margin-right:0px; padding-right:0px; margin-top:-15px; text-align:center; background-color:#fff;
+}
+
+.panel2 {
+  width: 98.8%; padding-left: 0px; padding-right: 0px;
+}
+
+.n5 {
+  background-color: ghostwhite;
+}
