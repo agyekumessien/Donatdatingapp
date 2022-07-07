@@ -47,6 +47,10 @@ import { MemberDetailComponent } from './_View/members/member-detail/member-deta
 import { ListsComponent } from './_View/lists/lists.component';
 import { MessagesComponent } from './_View/messages/messages.component';
 import { SharedModule } from './_Modules/shared.module';
+import { TestErrorsComponent } from './_Helpers/Errors/test-errors/test-errors.component';
+import { ErrorInterceptor } from './_Helpers/Interceptors/error.interceptor';
+import { NotFoundComponent } from './_Helpers/Errors/not-found/not-found.component';
+import { ServerErrorComponent } from './_Helpers/Errors/server-error/server-error.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -85,6 +89,9 @@ const routes: Routes = [
     MemberDetailComponent,
     ListsComponent,
     MessagesComponent,
+    TestErrorsComponent,
+    NotFoundComponent,
+    ServerErrorComponent,
   ],
   imports: [
    
@@ -120,7 +127,9 @@ const routes: Routes = [
    
   ],
 
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

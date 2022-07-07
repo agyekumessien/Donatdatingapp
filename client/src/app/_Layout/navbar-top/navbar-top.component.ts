@@ -23,9 +23,6 @@ export class NavbarTopComponent implements OnInit {
   login() {
     this.accountService.login(this.model).subscribe(response => {
       this.router.navigateByUrl('/members');
-    }, error => {
-      console.log(error);
-      this.toastr.error(error.error);
     })
   }
 
@@ -34,3 +31,4 @@ export class NavbarTopComponent implements OnInit {
     this.router.navigateByUrl('/')
   }
 }
+

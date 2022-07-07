@@ -26,10 +26,6 @@ namespace API
             httpContext.Response.Headers.Add("Access-Control-Allow-Methods", "POST,GET,PUT,PATCH,DELETE,OPTIONS");          
             return _next(httpContext);
 
-
-
-
-
         }
     }
 
