@@ -1,154 +1,31 @@
-<nav class="navbar navbar-expand-lg navbar-white bg-white">
-    <!-- <h5<a class="navbar-brand" routerLink='/productdisplay'>-->
-    <nav class="my-0 mr-md-auto font-weight-normal">
-      <a class="nav-item" routerLink="/home">
-        <!--<img  src="./assets/img/Globe4.png" style="padding-top: 0px;">-->
-      </a>
-  
-      <!--<span class="nav-item " routerLinkActive="active" style=" margin-left: 27px;">
-          <a class="nav-item " routerLink="/home"><a class="text-dark">Home</a>     
-            </a>
-          </span>-->
-  
-      <span class="nav-item n1" routerLinkActive="active">
-        <div
-          class="btn-group"
-          ngbDropdown
-          role="group"
-          aria-label="Button group with nested dropdown"
-        >
-          <button class="btn bg-white dropdown-toggle-split" ngbDropdownToggle>
-            <a class="text-dark">Services</a>
-          </button>
-          <div class="dropdown-menu" ngbDropdownMenu>
-            <button class="dropdown-item">One</button>
-            <button class="dropdown-item" routerLink="/product">
-              <a class="text-dark">SProduct</a>
-            </button>
-            <button class="dropdown-item" routerLink="/image">
-              <a class="text-dark">Gallery</a>
-            </button>
-          </div>
-        </div>
-      </span>
-  
-      <span class="nav-item text-dark" routerLinkActive="active">
-        <div
-          class="btn-group"
-          ngbDropdown
-          role="group"
-          aria-label="Button group with nested dropdown"
-        >
-          <button class="btn dropdown-toggle-split" ngbDropdownToggle>
-            <a class="text-dark">
-              <img alt="img" alt= "img" src=""/>Store</a
-            >
-          </button>
-          <div class="dropdown-menu" ngbDropdownMenu>
-            <button class="dropdown-item" routerLink="">
-              Shopping Cart
-            </button>
-            <br />
-            <button class="dropdown-item" routerLink="">Product</button>
-            <br />
-            <button class="dropdown-item" routerLink="">All Product</button>
-            <br />
-            <button href="#" class="dropdown-item">Orders</button>
-          </div>
-        </div>
-      </span>
-    </nav>
-  
-   <!-- <div class="inner-addon right-addon col-md-5">
-      <span class="n" href="#"><i class="glyphicon fa-search"></i></a>
-      <input type="text" class="form-control" placeholder="Search" />
-    </div>-->
-  
-    <!-- <form class="form-inline my-2 my-lg-0  badge-light" style="padding-left: 20px; background-color: floralwhite; border-radius: 8px; height:40px">
-        <input class="form-control my-2 my-sm-0" style="width: 300px;  border: #f1f1f1; background-color: floralwhite;"  type="search" placeholder="Search for News, product, brand and more..." aria-label="Search">
-        <button class="btn btn-outline-white my-2 my-sm-0 fa  fa-search" type="submit">
-        </button>
-  
-      </form>-->
-  
-    <span
-      class="nav-item n2"
-      routerLinkActive="active">
-      <i
-        class="btn-group"
-        ngbDropdown
-        role="group"
-        aria-label="Button group with nested dropdown">
-        <button class="btn dropdown-toggle-split" ngbDropdownToggle>
-          <a class="text-dark">
-            <img alt="img" src="" />Account</a
-          >
-        </button>
-        <i
-          class="dropdown-menu n4"
-          ngbDropdownMenu>
-          <button class="dropdown-item" [routerLink]="">
-            Profile
-          </button>
-          <br />
-          <button class="dropdown-item" routerLink="">
-            settings
-          </button>
-          <button class="dropdown-item" routerLink="">
-            My Activities
-          </button>
-          <br />
-         <button>
-            Logout
-          </button>
-        </i>
-      </i>
-    </span>
-  
-    <span
-      class="nav-item n2"
-      routerLinkActive="active">
-      <i class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          
-          id="navbarDropdownMenuLink"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Explore
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Protected Link #1</a>
-          <a class="dropdown-item" href="#">Protected Link #2</a>
-          <a class="dropdown-item" href="#">Protected Link #3</a>
-          <a class="dropdown-item" href="#">Protected Link #4</a>
-          <a class="dropdown-item" href="#">Protected Link #5</a>
-        </div>
-      </i>
-  
-      <div class="nav-item" >
-        <div class="btn-group" role="group" aria-label="signin">
-          <button
-            type="button"
-            class="btn btn-outline-success">
-            Register
-          </button>
-  
-          <button
-            type="button"
-            class="btn btn-outline-success"
-            
-           
-          >
-            Login
-          </button>
-        </div>
-      </div>
-    </span>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Carousel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
     
-  
-    
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
 </nav>
+
+
+
+

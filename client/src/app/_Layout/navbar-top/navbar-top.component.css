@@ -58,3 +58,22 @@
   #n3 {
     font-family: arial
   }
+
+  .p-2 {
+    margin-right: 35px;
+  }
+
+  .ngbdrop {
+    margin-right: 35px;
+
+  }
+
+  .dd1 {
+    height: 300px; width: 100px;
+          padding-right: 100px;
+          margin-right: 100px;
+  }
+
+  .dropdown-toggle, .dropdown-item{
+    cursor: pointer;
+  }
