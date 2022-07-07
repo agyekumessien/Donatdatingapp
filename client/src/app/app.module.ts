@@ -40,9 +40,13 @@ import { MatInputModule } from '@angular/material/input';
 
 import { CookieService } from 'ngx-cookie-service';
 import { NavbarTopComponent } from './_Layout/navbar-top/navbar-top.component';
-import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RegisterComponent } from './_Security/register/register.component';
-
+import { MemberListComponent } from './_View/members/member-list/member-list.component';
+import { MemberDetailComponent } from './_View/members/member-detail/member-detail.component';
+import { ListsComponent } from './_View/lists/lists.component';
+import { MessagesComponent } from './_View/messages/messages.component';
+import { SharedModule } from './_Modules/shared.module';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -72,20 +76,24 @@ const routes: Routes = [
 
     NavbarComponent,
     JumbotronComponent,
-    
+
     NavbarTopComponent,
     NavbarBottomComponent,
     FooterBottomComponent,
     RegisterComponent,
+    MemberListComponent,
+    MemberDetailComponent,
+    ListsComponent,
+    MessagesComponent,
   ],
   imports: [
-    BsDropdownModule.forRoot(),
+   
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     NgbAlertModule,
     NgbModule,
-  
+
     MatSidenavModule,
     MatPaginatorModule,
 
@@ -103,13 +111,13 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-   
+
     FormsModule,
     ToastNoAnimationModule.forRoot(),
     RouterModule.forRoot(routes),
-    ToastrModule.forRoot({
-      progressBar: true,
-    }),
+    BsDropdownModule.forRoot(),
+    SharedModule
+   
   ],
 
   providers: [],
