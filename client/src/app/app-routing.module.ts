@@ -4,9 +4,11 @@ import { NotFoundComponent } from './_Helpers/Errors/not-found/not-found.compone
 import { ServerErrorComponent } from './_Helpers/Errors/server-error/server-error.component';
 import { TestErrorsComponent } from './_Helpers/Errors/test-errors/test-errors.component';
 import { AuthGuard } from './_Helpers/Guards/auth.guard';
+import { PreventUnsavedChangesGuard } from './_Helpers/Guards/prevent-unsaved-changes.guard';
 import { HomeComponent } from './_View/home/home.component';
 import { ListsComponent } from './_View/lists/lists.component';
 import { MemberDetailComponent } from './_View/members/member-detail/member-detail.component';
+import { MemberEditComponent } from './_View/members/member-edit/member-edit.component';
 import { MemberListComponent } from './_View/members/member-list/member-list.component';
 import { MessagesComponent } from './_View/messages/messages.component';
 
@@ -18,8 +20,9 @@ const routes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      {path: 'members', component: MemberListComponent, canActivate: [AuthGuard]},
+      {path: 'members', component: MemberListComponent},
       {path: 'members/:username', component: MemberDetailComponent},
+      {path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard]},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
     ]

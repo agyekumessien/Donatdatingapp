@@ -51,8 +51,12 @@ import { TestErrorsComponent } from './_Helpers/Errors/test-errors/test-errors.c
 import { ErrorInterceptor } from './_Helpers/Interceptors/error.interceptor';
 import { NotFoundComponent } from './_Helpers/Errors/not-found/not-found.component';
 import { ServerErrorComponent } from './_Helpers/Errors/server-error/server-error.component';
-import { MemberCardComponent } from './_View/Members/member-card/member-card.component';
+
 import { JwtInterceptor } from './_Helpers/Interceptors/jwt.interceptor';
+import { MemberEditComponent } from './_View/members/member-edit/member-edit.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './_Helpers/Interceptors/loading.interceptor';
+import { MemberCardComponent } from './_View/members/member-card/member-card.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -94,10 +98,11 @@ const routes: Routes = [
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
-    MemberCardComponent,
+   
+    MemberEditComponent,
+        MemberCardComponent,
   ],
   imports: [
-   
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -121,19 +126,26 @@ const routes: Routes = [
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
+    
     FormsModule,
     ToastNoAnimationModule.forRoot(),
     RouterModule.forRoot(routes),
     BsDropdownModule.forRoot(),
-    SharedModule
-   
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+    }),
+    SharedModule,
+    NgxSpinnerModule,
+
   ],
 
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
+  exports: [ToastrModule],
+
 })
 export class AppModule {}
