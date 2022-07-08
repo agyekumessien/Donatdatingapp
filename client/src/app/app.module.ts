@@ -58,6 +58,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_Helpers/Interceptors/loading.interceptor';
 import { MemberCardComponent } from './_View/members/member-card/member-card.component';
 import { PhotoEditorComponent } from './_View/members/photo-editor/photo-editor.component';
+import { TextInputComponent } from './_Security/text-input/text-input.component';
+import { DateInputComponent } from './_Security/date-input/date-input.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -103,6 +106,9 @@ const routes: Routes = [
     MemberEditComponent,
         MemberCardComponent,
         PhotoEditorComponent,
+        TextInputComponent,
+        DateInputComponent,
+      
   ],
   imports: [
     BrowserModule,
