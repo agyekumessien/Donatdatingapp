@@ -51,6 +51,8 @@ import { TestErrorsComponent } from './_Helpers/Errors/test-errors/test-errors.c
 import { ErrorInterceptor } from './_Helpers/Interceptors/error.interceptor';
 import { NotFoundComponent } from './_Helpers/Errors/not-found/not-found.component';
 import { ServerErrorComponent } from './_Helpers/Errors/server-error/server-error.component';
+import { MemberCardComponent } from './_View/Members/member-card/member-card.component';
+import { JwtInterceptor } from './_Helpers/Interceptors/jwt.interceptor';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -92,6 +94,7 @@ const routes: Routes = [
     TestErrorsComponent,
     NotFoundComponent,
     ServerErrorComponent,
+    MemberCardComponent,
   ],
   imports: [
    
@@ -128,7 +131,8 @@ const routes: Routes = [
   ],
 
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
   ],
   bootstrap: [AppComponent],
 })
