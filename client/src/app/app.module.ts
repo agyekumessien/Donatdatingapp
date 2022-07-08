@@ -57,6 +57,7 @@ import { MemberEditComponent } from './_View/members/member-edit/member-edit.com
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_Helpers/Interceptors/loading.interceptor';
 import { MemberCardComponent } from './_View/members/member-card/member-card.component';
+import { PhotoEditorComponent } from './_View/members/photo-editor/photo-editor.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -101,6 +102,7 @@ const routes: Routes = [
    
     MemberEditComponent,
         MemberCardComponent,
+        PhotoEditorComponent,
   ],
   imports: [
     BrowserModule,
