@@ -39,6 +39,7 @@
     "ngx-spinner": "^12.0.0",
     "ngx-toastr": "^13.2.1",
     "rxjs": "~6.6.0",
+    "rxjs-compat": "^6.6.7",
     "sweetalert2": "^11.0.11",
     "toastr": "^2.1.4",
     "toastr2": "^3.0.0-alpha.18",

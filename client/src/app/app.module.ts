@@ -61,6 +61,7 @@ import { PhotoEditorComponent } from './_View/members/photo-editor/photo-editor.
 import { TextInputComponent } from './_Security/text-input/text-input.component';
 import { DateInputComponent } from './_Security/date-input/date-input.component';
 import { TimeagoModule } from 'ngx-timeago';
+import { MemberMessagesComponent } from './_View/members/member-messages/member-messages.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -108,6 +109,7 @@ const routes: Routes = [
         PhotoEditorComponent,
         TextInputComponent,
         DateInputComponent,
+        MemberMessagesComponent,
       
   ],
   imports: [

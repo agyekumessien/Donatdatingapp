@@ -7,14 +7,6 @@ namespace API.Data.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<string>(
-                name: "UserName",
-                table: "Users",
-                type: "TEXT",
-                nullable: true,
-                oldClrType: typeof(int),
-                oldType: "INTEGER");
-
             migrationBuilder.AddColumn<byte[]>(
                 name: "PasswordHash",
                 table: "Users",
@@ -37,16 +29,6 @@ namespace API.Data.Migrations
             migrationBuilder.DropColumn(
                 name: "PasswordSalt",
                 table: "Users");
-
-            migrationBuilder.AlterColumn<int>(
-                name: "UserName",
-                table: "Users",
-                type: "INTEGER",
-                nullable: false,
-                defaultValue: 0,
-                oldClrType: typeof(string),
-                oldType: "TEXT",
-                oldNullable: true);
         }
     }
 }
