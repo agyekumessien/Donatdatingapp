@@ -41,9 +41,6 @@ namespace API.SignalR
 
 
 
-
-
-
         public override async Task OnDisconnectedAsync(Exception exception)
         {
             await base.OnDisconnectedAsync(exception);
@@ -87,16 +84,44 @@ namespace API.SignalR
         }
 
 
+ /*private async Task<Group> AddToGroup(string groupName)
+        {
+            var group = await _messageRepository.GetMessageGroup(groupName);
+            var connection = new Connection(Context.ConnectionId, Context.User.GetUsername());
 
+            if (group == null)
+            {
+                group = new Group(groupName);
+                _messageRepository.AddGroup(group);
+            }
+
+            group.Connections.Add(connection);
+
+            if (await _messageRepository.SaveAllAsync()) return group;
+
+            throw new HubException("Failed to join group");
+        }
+*/
+
+
+
+
+
+
+ private async Task<Group> RemoveFromMessageGroup()
+        {
+            var group = await _messageRepository.GetGroupForConnection(Context.ConnectionId);
+            var connection = group.Connections.FirstOrDefault(x => x.ConnectionId == Context.ConnectionId);
+            _messageRepository.RemoveConnection(connection);
+            if (await _messageRepository.SaveAllAsync()) return group;
+
+            throw new HubException("Failed to remove from group");
+        }
 
         private string GetGroupName(string caller, string other)
         {
             var stringCompare = string.CompareOrdinal(caller, other) < 0;
             return stringCompare ? $"{caller}-{other}" : $"{other}-{caller}";
         }
-
-
-      }
-
-
     }
+}

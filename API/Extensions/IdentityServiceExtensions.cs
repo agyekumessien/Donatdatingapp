@@ -35,10 +35,9 @@ namespace API.Extensions
                         ValidateIssuer = false,
                         ValidateAudience = false,
                     };
-
-
-                       options.Events = new JwtBearerEvents
-                         {
+                    
+                    options.Events = new JwtBearerEvents
+                    {
                         OnMessageReceived = context =>
                         {
                             var accessToken = context.Request.Query["access_token"];
@@ -53,9 +52,6 @@ namespace API.Extensions
                             return Task.CompletedTask;
                         }
                     };
-
-
-
                 });
 
             services.AddAuthorization(opt => 
