@@ -42,7 +42,7 @@ namespace API
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseKestrel();
+                   // webBuilder.UseKestrel();
                     webBuilder.UseStartup<Startup>();
                 });
     }
