@@ -51,16 +51,19 @@ namespace API
 
             app.UseRouting();
 
-           app.UseCors(builder =>
-           builder.WithOrigins(_config["ApplicationSettings:Client_URL"].ToString())
-           .AllowAnyHeader()
-           .AllowCredentials()
-            .AllowAnyMethod()
+          // app.UseCors(builder =>
+          // builder.WithOrigins(_config["ApplicationSettings:Client_URL"].ToString())
+          // .AllowAnyHeader()
+          // .AllowCredentials()
+           // .AllowAnyMethod()
 
-              );
+            //  );
 
 
-
+                app.UseCors(x => x.AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials()
+                .WithOrigins("http://localhost:4200"));
 
             app.UseAuthentication();
             app.UseAuthorization();
